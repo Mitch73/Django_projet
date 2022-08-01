@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+{% for order in orders %}
+
+<img src="{{ order.product.image.url }}" alt="{{ order.product.title}}">
+<h2>{{ order.product.title}}</h2>
+<p>{{ order.quantity }} dans le panier</p>
+
+{% endfor %} 
+
+<a href="{% url 'delete_basket' %}">Supprimer le panier</a>
+
+{% endblock %}
+

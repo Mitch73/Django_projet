@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Accueil du site</title>
+{% endblock %}
+
+{% block content %}
+<div id="homepage">
+<!-- on recupèr les produits passé dans la vue 'products' -->
+<!-- et affiche les informations du produit -->
+{% for product in products %}
+    <div id="index">
+            <!-- get_absolute_url permet d'accèder à la page de details -->
+            <a class="product" href="{{ product.get_absolute_url}}">
+            <figure>
+            <img src="{{ product.image.url }}" alt="{{ product.title}}">
+            <figcaption>{{ product.title }}</figcaption>
+            </figure>
+            </a>
+    </div>
+{% endfor %}   
+</div>
+{% endblock %}
+

@@ -1,0 +1,64 @@
+body{
+    background-color: lightcyan;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+a:hover{
+    color: blue;
+}
+.body{
+    margin: auto;
+    width: 70%;
+}
+/* navbar */
+#nav_bar{
+    display: flex;
+    margin: auto;
+    width: 70%;
+}
+.connection{
+    margin-left: auto;
+    padding: 1rem;
+}
+/* homepage body */
+#homepage{
+    width: 70%;
+    margin: auto;
+}
+#index{
+    display: inline-flex;
+}
+#index img{
+    width: 200px;
+}
+/* body details */
+img#img_island{
+    width: 300px;
+}
+#details {
+    margin: auto;
+    width: 28.3%;
+}
+#precedent{
+    display: flex;
+    justify-content: space-around;
+}
+/* footer */
+footer{
+    display: flex;
+    justify-content: space-between; 
+    background-color: #d3cbcb;
+    width: 100%;
+    margin-top: 2rem;
+}
+.foot {
+    margin-left: 1rem;
+}
+.propo{
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    line-height: 1.7em;
+}

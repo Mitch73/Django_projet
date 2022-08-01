@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    {% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>    
+    <nav id="nav_bar">
+        <!-- retour a la page d'acceuil -->
+        <a href="{%  url 'index' %}">
+        <h1>Le Chopi</h1>
+        </a>
+        <div class="connection">
+            {% if user.is_authenticated %}
+                {{user.username}}:
+                <a href="{% url 'logout' %}">Déconnexion</a>
+            {% else %}
+                <a href="{% url 'login' %}">Connexion</a>
+                <a href="{% url 'signup' %}">S'inscrire</a>
+            {% endif %}
+
+            {% if user.basket %}
+            <a href="{% url 'basket' %}">Panier ({{ user.basket.orders.count }})</a>
+            {% endif %}
+        </div>
+    </nav>
+    {% block content %}
+        <section id="body"></section>
+    
+    {% endblock %}
+    <footer>
+        <div class="foot">
+            <h3>A propos</h3>       
+                        <a class="propo" href="#">Fonctionnement du site</a>
+                        <a class="propo" href="#">Conditions générales de vente</a>
+                        <a class="propo" href="#">Données et confidentialité</a>
+        </div>
+        <div class="foot">           
+            <h3>Nos produits</h3>
+                        <a class="propo" href="#">Charte qualité</a>
+        </div>   
+        <div class="foot">          
+            <h3>Assistance</h3>
+                        <a class="propo" href="#">Centre d'aide</a>
+                        <a class="propo" href="#">Nous contacter</a>
+        </div>
+    </footer>
+</body>
+</html>
